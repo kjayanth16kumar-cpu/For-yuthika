@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>For Yuthika 💖</title>
+
+<style>
+body{
+  margin:0;
+  font-family:'Segoe UI',sans-serif;
+  background:linear-gradient(135deg,#ffd6e8,#ffeef6);
+  color:#8b005d;
+  text-align:center;
+}
+.container{
+  max-width:700px;
+  margin:auto;
+  padding:40px 20px;
+}
+.card{
+  background:white;
+  border-radius:25px;
+  padding:30px;
+  box-shadow:0 10px 30px rgba(0,0,0,.15);
+  animation:fadeIn 1.5s ease;
+}
+.hidden{display:none;}
+button{
+  background:linear-gradient(90deg,#ff69b4,#ff1493);
+  border:none;
+  color:white;
+  padding:12px 25px;
+  border-radius:30px;
+  font-size:16px;
+  cursor:pointer;
+  margin-top:20px;
+}
+.meter{
+  margin:20px 0;
+  background:#ffe1ef;
+  border-radius:20px;
+  overflow:hidden;
+}
+.meter span{
+  display:block;
+  height:25px;
+  width:120%;
+  background:linear-gradient(90deg,#ff69b4,#ff1493);
+  animation:load 3s ease;
+}
+p{
+  font-size:18px;
+  line-height:1.6;
+}
+@keyframes fadeIn{
+  from{opacity:0;transform:translateY(20px);}
+  to{opacity:1;transform:translateY(0);}
+}
+@keyframes load{
+  from{width:0;}
+  to{width:120%;}
+}
+.heart{
+  position:fixed;
+  animation:float 6s infinite;
+}
+@keyframes float{
+  0%{transform:translateY(0);opacity:1;}
+  100%{transform:translateY(-100vh);opacity:0;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- PAGE 1 -->
+<div class="card" id="page1">
+  <h1>Hey Yuthika 💖</h1>
+  <p>Do you even know how cute you are? 🥰</p>
+  <button onclick="nextPage(1)">Tap to continue 💕</button>
+</div>
+
+<!-- PAGE 2 -->
+<div class="card hidden" id="page2">
+  <h2>Measuring cuteness… 💕</h2>
+  <div class="meter"><span></span></div>
+  <p><strong>Result:</strong> 100% ➜ Error ➜ Exceeded Infinity ♾️💗</p>
+  <button onclick="nextPage(2)">Okay but seriously 😌</button>
+</div>
+
+<!-- PAGE 3 -->
+<div class="card hidden" id="page3">
+  <p>
+    I don’t know if anyone has told you this properly, but you’re genuinely beautiful 🥰
+    not just in the obvious way, but in the quiet way that stays with people 💕
+  </p>
+  <p>
+    Your smile is dangerous, by the way. It’s the kind that makes people forget 🫠
+    what they were thinking for a second. And your laugh?
+    That’s one of those things that can instantly change someone’s mood ✨✨
+  </p>
+  <p>
+    What I admire most about you is your character 💫.
+    You’re respectful, genuine, and real — and that’s rare.
+    You don’t try to be someone else, and that makes you special 🫶🫶
+  </p>
+  <p>
+    I’m not saying this to impress you or expect anything 😊.
+    I just wanted you to know that you’re appreciated, admired,
+    and honestly… someone worth knowing more 💌💌
+  </p>
+  <p>
+    <strong>No matter what, never doubt knowing this 🥰:</strong><br>
+    You’re amazing exactly the way you are 💫✨
+  </p>
+  <h3>— For Yuthika 💗</h3>
+</div>
+
+</div>
+
+<script>
+function nextPage(n){
+  document.getElementById("page"+n).classList.add("hidden");
+  document.getElementById("page"+(n+1)).classList.remove("hidden");
+}
+
+for(let i=0;i<20;i++){
+  let h=document.createElement("div");
+  h.innerHTML="💗";
+  h.className="heart";
+  h.style.left=Math.random()*100+"vw";
+  h.style.bottom="-20px";
+  h.style.fontSize=(20+Math.random()*20)+"px";
+  h.style.animationDuration=(4+Math.random()*4)+"s";
+  document.body.appendChild(h);
+}
+</script>
+
+</body>
+</html>
