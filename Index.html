@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For Yuthika 💖</title>
+
+<style>
+body{
+  margin:0;
+  font-family:'Poppins','Segoe UI',sans-serif;
+  background:linear-gradient(135deg,#ffd6e8,#fff0f5);
+  color:#7a004a;
+  text-align:center;
+  overflow:hidden;
+}
+
+.page{
+  display:none;
+  min-height:100vh;
+  padding:60px 25px;
+  background:linear-gradient(135deg,#ffd6e8,#fff0f5);
+}
+
+.page.active{display:block;}
+
+h1{font-size:42px;margin-bottom:20px;}
+h2{font-size:26px;font-weight:500;margin-bottom:30px;}
+p{font-size:20px;line-height:1.8;margin-bottom:22px;}
+
+button{
+  background:linear-gradient(135deg,#ff69b4,#ff1493);
+  border:none;
+  color:white;
+  padding:16px 34px;
+  border-radius:30px;
+  font-size:18px;
+  font-weight:600;
+  cursor:pointer;
+  box-shadow:0 8px 20px rgba(255,105,180,0.4);
+}
+button:active{transform:scale(0.96);}
+
+/* Cuteness meter */
+.meter{
+  width:85%;
+  height:32px;
+  background:#ffe1ef;
+  border-radius:25px;
+  margin:40px auto;
+  overflow:hidden;
+}
+.meter-fill{
+  width:120%;
+  height:100%;
+  background:linear-gradient(90deg,#ff69b4,#ff1493);
+}
+
+/* Card */
+.card{
+  background:rgba(255,255,255,0.88);
+  padding:35px 30px;
+  border-radius:25px;
+  max-width:700px;
+  margin:0 auto;
+  box-shadow:0 15px 35px rgba(0,0,0,0.08);
+  animation:smileGlow 3s ease-in-out infinite;
+}
+
+/* Smile glow animation */
+@keyframes smileGlow{
+  0%,100%{box-shadow:0 15px 35px rgba(255,105,180,0.25);}
+  50%{box-shadow:0 20px 45px rgba(255,20,147,0.45);}
+}
+
+/* Floating hearts */
+.heart{
+  position:fixed;
+  bottom:-20px;
+  font-size:20px;
+  animation:floatUp 8s linear infinite;
+  opacity:0.7;
+}
+@keyframes floatUp{
+  from{transform:translateY(0);opacity:0.7;}
+  to{transform:translateY(-110vh);opacity:0;}
+}
+</style>
+</head>
+
+<body>
+
+<!-- Background music (soft instrumental) -->
+<audio id="music" loop>
+  <source src="https://cdn.pixabay.com/audio/2022/10/03/audio_7e2a8bdfc3.mp3" type="audio/mpeg">
+</audio>
+
+<!-- PAGE 1 -->
+<div class="page active" id="p1">
+  <h1>Hey Yuthika 💖</h1>
+  <h2>Do you even know how cute you are? 🥰</h2>
+  <button onclick="nextPage()">Tap to continue 💕</button>
+</div>
+
+<!-- PAGE 2 -->
+<div class="page" id="p2">
+  <h1>Measuring your cuteness 😌</h1>
+  <div class="meter"><div class="meter-fill"></div></div>
+  <h2>Result: 100%+ ✨💫</h2>
+  <button onclick="nextPage()">One more thing 💗</button>
+</div>
+
+<!-- PAGE 3 -->
+<div class="page" id="p3">
+  <div class="card">
+    <p>I don’t know if anyone has told you this properly, but you’re genuinely beautiful 🥰 — not just in the obvious way, but in the quiet way that stays with people 💕</p>
+
+    <p>Your smile is dangerous. It’s the kind that makes people forget 🫠 what they were thinking for a second. And your laugh? That’s one of those things that can instantly change someone’s mood ✨✨</p>
+
+    <p>💫 What I admire most about you is your character. You’re respectful, genuine, and real — and that’s rare. You don’t try to be someone else, and that makes you special 🫶🫶</p>
+
+    <p>😊 I’m not saying this to impress you or expect anything. I just wanted you to know that you’re appreciated, admired, and honestly… someone worth knowing more 💌💌</p>
+
+    <p><strong>No matter what, never doubt this:</strong><br>
+    You’re amazing exactly the way you are 💫✨</p>
+  </div>
+</div>
+
+<script>
+let current=1;
+
+/* Page navigation + start music */
+function nextPage(){
+  document.getElementById('p'+current).classList.remove('active');
+  current++;
+  document.getElementById('p'+current).classList.add('active');
+  document.getElementById('music').play();
+}
+
+/* Floating hearts generator */
+setInterval(()=>{
+  const heart=document.createElement("div");
+  heart.className="heart";
+  heart.innerHTML="💖";
+  heart.style.left=Math.random()*100+"vw";
+  heart.style.fontSize=(16+Math.random()*20)+"px";
+  document.body.appendChild(heart);
+  setTimeout(()=>heart.remove(),8000);
+},600);
+</script>
+
+</body>
+</html>
